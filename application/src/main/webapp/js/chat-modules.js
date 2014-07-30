@@ -791,9 +791,29 @@ String.prototype.endsWith = function(suffix) {
 
 var miniChats = {};
 
-function showMiniChatPopup(room, type) {
+function showMiniChatPopup(room, type, div, width) {
   var chatServerUrl = jqchat("#chat-status").attr("data-chat-server-url");
-  var $miniChat = jqchat(".mini-chat").first();
+  if (typeof div === "undefined") {
+    div = ".mini-chat";
+  }
+  if (typeof width === "undefined") {
+    width = "300px";
+  }
+  var $miniChat = jqchat(div).first();
+  $miniChat.css("width", width);
+  if (div !== ".mini-chat") {
+    $miniChat.css("position", "relative");
+    $miniChat.css("margin", "0 auto 10px auto");
+    $miniChat.css("left", "0");
+    $miniChat.css("top", "0");
+    $miniChat.css("webkit-box-shadow", "0 2px 4px -1px rgba(35,44,48,0.18)");
+    $miniChat.css("-moz-box-shadow", "0 2px 4px -1px rgba(35,44,48,0.18)");
+    $miniChat.css("box-shadow", "0 2px 4px -1px rgba(35,44,48,0.18)");
+    $miniChat.css("border", "1px solid #cfcfcf");
+    $miniChat.css("z-index", "900");
+
+    //$miniChat.children(".title").css("display", "none");
+  }
   var username = $miniChat.attr("data-username");
   var token = $miniChat.attr("data-token");
   var index = $miniChat.attr("data-index");

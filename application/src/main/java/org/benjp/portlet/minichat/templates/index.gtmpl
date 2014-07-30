@@ -1,0 +1,14 @@
+<div id="mini-chat" class="mini-chat uiBox" data-position="right"></div>
+<script type="text/javascript">
+  function showMiniChat() {
+    if (typeof showMiniChatPopup === "function") {
+      var id = document.location.href;
+      showMiniChatPopup(id, "external", "#mini-chat", "95%");
+    } else {
+      setTimeout(showMiniChat, 500);
+    }
+
+  }
+  setTimeout(showMiniChat, 500);
+
+</script>

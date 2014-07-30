@@ -64,6 +64,33 @@
    </portlet>
 
    <portlet>
+     <portlet-name>ChatMiniApplication</portlet-name>
+     <display-name xml:lang="EN">Chat Mini Application</display-name>
+     <portlet-class>org.benjp.portlet.minichat.MinichatPortlet</portlet-class>
+     <init-param>
+       <name>juzu.run_mode</name>
+       <value>prod</value>
+     </init-param>
+     <supports>
+       <mime-type>text/html</mime-type>
+     </supports>
+     <supported-locale>en</supported-locale>
+     <supported-locale>fr</supported-locale>
+     <resource-bundle>locale.portlet.chat.Resource</resource-bundle>
+     <portlet-info>
+       <title>Chat Mini Application</title>
+       <keywords>Chat</keywords>
+     </portlet-info>
+     <portlet-preferences>
+       <preference>
+         <name>title</name>
+         <value>---</value>
+         <read-only>false</read-only>
+       </preference>
+     </portlet-preferences>
+   </portlet>
+
+   <portlet>
      <portlet-name>ChatStatisticsApplication</portlet-name>
      <display-name xml:lang="EN">Chat Statistics Application</display-name>
      <portlet-class>org.benjp.portlet.statistics.StatisticsPortlet</portlet-class>
