@@ -85,6 +85,7 @@ public class CalendarService {
     task.setSummary(summary);
     task.setEventType(CalendarEvent.TYPE_TASK);
     task.setRepeatType(CalendarEvent.RP_NOREPEAT);
+    task.setEventState(CalendarEvent.NEEDS_ACTION);
     task.setPrivate(true);
     task.setFromDateTime(from);
     task.setToDateTime(to);

@@ -273,9 +273,11 @@ public class ChatApplication
   @Resource
   public Response.Content createTask(String username, String dueDate, String task, String roomName, String isSpace) {
     SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy HH:mm");
-    Date today = new Date();
-    today.setHours(0);
-    today.setMinutes(0);
+    Calendar cal = Calendar.getInstance();
+    cal.set(Calendar.HOUR, 0);
+    cal.set(Calendar.MINUTE, 0);
+    cal.set(Calendar.SECOND, 0);
+    Date today = cal.getTime();
     try {
       calendarService_.saveTask(remoteUser_, username, task, roomName, isSpace, today, sdf.parse(dueDate+" 23:59"));
     } catch (ParseException e) {
